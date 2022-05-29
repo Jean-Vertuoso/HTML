@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro de Alunos</title>
+        <style>
+            fieldset{
+                width: 30%;
+                background-color: gainsboro;
+            }
+            .margemBaixa{
+                margin-bottom: 15px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <form action="" method="get">
+        <center><fieldset style="text-align: center;">
+                <h1>Cadastro de alunos</h1>
+                <h3>Preencha seus dados</h3>
+
+                <label for="idNome">Nome</label><br>
+                <input
+                    id="idNome"
+                    type="text"
+                    name="nmNome"
+                    size="50"
+                    required
+                    value="">
+
+                <br><br>
+
+                <label for="idSobrenome">Sobrenome</label><br>
+                <input
+                    id="idSobrenome"
+                    type="text"
+                    name="nmSobrenome"
+                    size="50"
+                    required
+                    value="">
+
+                <br><br>
+
+                <label for="idDataNasc">Data de nascimento</label><br>
+                <input
+                    id="idDataNasc"
+                    type="date"
+                    name="nmDataNasc"
+                    size="50"
+                    required
+                    value="">
+
+                <br><br>
+
+                <label for="idLocal">Endereço</label><br>
+                <input
+                    id="idLocal"
+                    type="text"
+                    name="nmLocal"
+                    size="50"
+                    value="">
+                <br><br>
+
+                <label for="idMae">Nome da Mãe</label><br>
+                <input
+                    id="idMae"
+                    type="text"
+                    name="nmMae"
+                    size="50"
+                    required
+                    value="">
+                <br><br>
+
+                <label for="idPai">Nome do Pai</label><br>
+                <input
+                    id="idPai"
+                    type="text"
+                    name="nmPai"
+                    size="50"
+                    value="">
+
+                <br><br>
+
+                <label for="idEmail">E-mail</label><br>
+                <input
+                    id="idEmail"
+                    type="email"
+                    name="nmEmail"
+                    size="50"
+                    value="">
+
+                <br><br>
+
+                <label for="idAlfab">Nível de alfabetização</label>
+                <select name="nmAlfab" id="idAlfab">
+                    <option value="presil">Pré-silábico</option>
+                    <option value="silab">Silábico</option>
+                    <option value="silabalf">Silábico-alfabético</option>
+                    <option value="alfab">Alfabético</option>
+                </select>
+
+                <br><br>
+
+                <div class="margemBaixa">
+                    <input
+                        id="idMas"
+                        type="radio"
+                        name="nmGenero"
+                        value="Masculino">
+                    <label for="idMas">Masculino</label><br>
+
+                    <input
+                        id="idFem"
+                        type="radio"
+                        name="nmGenero"
+                        value="Feminino"
+                        required>
+                    <label for="idFem">Feminino</label><br>
+                </div>
+                
+                <div class="margemBaixa">
+                    <input
+                        id="idBtnSubmit"
+                        type="button"
+                        value="Finalizar meu cadastro"
+                        style="padding: 10px;"
+                        onclick="mostrarInformacoes()">
+
+                    <input
+                        id="idReset"
+                        type="reset"
+                        style="padding: 10px;">
+                </div>
+            </fieldset></center>
+        </form>
+        
+        <script>
+            var nome;
+            var sobrenome;
+            var dataNasc;
+            var endereco;
+            var nomeMae;
+            var nomePai;
+            var email;
+            var genero;
+            var informacoes;
+            var alfabetizacao;
+
+            
+            function mostrarInformacoes(){
+
+                nome = document.getElementById("idNome").value;
+                sobrenome = document.getElementById("idSobrenome").value;                
+                dataNasc = document.getElementById("idDataNasc").value;
+                endereco = document.getElementById("idLocal").value;
+                nomeMae = document.getElementById("idMae").value;                
+                nomePai = document.getElementById("idPai").value;
+                email = document.getElementById("idEmail").value;
+                alfabetizacao = document.getElementById("idAlfab");
+                genero = document.querySelector('input[name="nmGenero"]:checked').value;
+                informacoes = document.getElementById("idBtnSubmit").value;
+
+                console.log("Nome: "+ nome);
+                console.log("Sobrenome: "+ sobrenome);
+                console.log("Data de nascimento: "+ dataNasc);
+                console.log("Endereço: "+ endereco);
+                console.log("Nome da mãe: "+ nomeMae);
+                console.log("Nome do pai: "+ nomePai);
+                console.log("E-mail: "+ email);
+                console.log("Alfabetização: "+ alfabetizacao.options[alfabetizacao.selectedIndex].innerHTML);
+                console.log("Gênero: "+ genero);
+              
+            }
+
+        </script>
+    </body>
+</html>

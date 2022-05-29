@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário de Contrato</title>
+        <style>
+            fieldset{
+                width: 30%;
+                text-align: center;
+            }            
+        </style>
+
+    </head>
+    <body>
+
+        <form action="" method="get">
+            <center><fieldset style="text-align: center;">
+                <h1>Formulário de contrato</h1>
+
+                <label for="idNome"></label><br>
+                <input
+                    id="idNome"
+                    type="text"
+                    name="nmNome"
+                    size="50"
+                    placeholder="Insira seu nome"
+                    required
+                    value="">
+
+                <br><br>
+
+                <label for="idEmail"></label><br>
+                <input
+                    id="idEmail"
+                    type="email"
+                    name="nmEmail"
+                    size="50"
+                    placeholder="Insira seu e-mail"
+                    required
+                    value="">
+
+                <br><br>
+
+                <label for="idEmpresa"></label><br>
+                <input
+                    id="idEmpresa"
+                    type="text"
+                    name="nmEmpresa"
+                    size="50"
+                    placeholder="Insira o nome da empresa"
+                    required
+                    value="">
+
+                <br><br>
+
+                <label for="idDdd"></label><br>
+                <input
+                    id="idDdd"
+                    type="text"
+                    name="nmDdd"
+                    size="2"
+                    min="00"
+                    max="99"
+                    maxlength="2"
+                    placeholder="DDD"
+                    required
+                    value=""> 
+
+                <label for="idFone"></label>
+                <input
+                    id="idFone"
+                    type="tel"
+                    name="nmFone"
+                    placeholder="Insira o contato"
+                    required
+                    value="">
+
+                <br><br>
+                
+                <h3>Motivo do contato</h3>
+                <input
+                    id="idComercial"
+                    type="radio"
+                    name="nmMotivo"
+                    required
+                    value="Comercial">
+                <label for="idComercial">Comercial</label><br>
+
+                <input
+                    id="idReclamacao"
+                    type="radio"
+                    name="nmMotivo"
+                    value="Reclamação">
+                <label for="idReclamacao">Reclamação</label><br>
+
+                <input
+                    id="idSugestao"
+                    type="radio"
+                    name="nmMotivo"
+                    value="Sugestão">
+                <label for="idSugestao">Sugestão</label><br>
+
+                <input
+                    id="idCancela"
+                    type="radio"
+                    name="nmMotivo"
+                    value="Cancelamento">
+                <label for="idCancela">Cancelamento</label><br>
+
+                <input
+                    id="idDuvida"
+                    type="radio"
+                    name="nmMotivo"
+                    value="Dúvida">
+                <label for="idDuvida">Dúvida</label><br>
+
+                <input
+                    id="idOutros"
+                    type="radio"
+                    name="nmMotivo"
+                    value="Outros">
+                <label for="idOutros">Outros</label>
+
+                <br><br>
+
+                <textarea
+                    id="idCarac"
+                    name="nmCarac"
+                    cols="50"
+                    rows="10"
+                    maxlength="1000"
+                    placeholder="Comentários"
+                    required
+                    value="">
+                </textarea>
+
+                <br><br>
+                
+                <input
+                    id="idBtnSubmit"
+                    type="button"
+                    value="Enviar"
+                    style="padding: 10px;"
+                    onclick="coletarInformacoes()"> 
+
+            </fieldset></center>
+        </form>
+
+        <script>
+            var nome;
+            var email;
+            var nomeEmpresa;
+            var ddd;
+            var telefone;
+            var motivo;
+            var texto;
+
+            function coletarInformacoes(){
+
+                nome = document.getElementById("idNome").value;               
+                email = document.getElementById("idEmail").value;
+                nomeEmpresa = document.getElementById("idEmpresa").value;
+                ddd = document.getElementById("idDdd").value;
+                telefone = document.getElementById("idFone").value;
+                texto = document.getElementById("idCarac").value;
+                motivo = document.querySelector('input[name="nmMotivo"]:checked').value;
+                informacoes = document.getElementById("idBtnSubmit").value;
+
+                console.log("Nome: "+ nome);
+                console.log("E-mail: "+ email);
+                console.log("Nome da Empresa: "+ nomeEmpresa);
+                console.log("Telefone: "+ ddd +" "+ telefone);
+                console.log("Motivo: "+ motivo);
+                console.log("Comentários: "+ texto);
+                
+                }
+
+        </script>
+    </body>
+</html>

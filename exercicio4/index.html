@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pesquisa de satisfação</title>
+        <style>
+            fieldset{
+                width: 800px;
+                background-color: beige;
+                border-radius: 2%;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .Enviar{
+                padding: 20px;
+            }
+
+            .Enviar input{
+                padding: 10px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="" method="get">
+            <center><fieldset>
+                <div>
+                    <h1>Pesquisa de satisfação</h1>
+                </div>
+                
+                <div>
+                    <h3>Sua solicitação foi atendida?</h3>
+
+                    <input
+                        id="idNao"
+                        type="radio"
+                        name="nmAtendeu"
+                        value="Não foi atendida">
+                    <label for="idNao">Não foi atendida</label>
+
+                    <input
+                        id="idParc"
+                        type="radio"
+                        name="nmAtendeu"
+                        value="Parcialmente atendida">
+                    <label for="idParc">Parcialmente atendida</label>
+
+                    <input
+                        id="idSim"
+                        type="radio"
+                        name="nmAtendeu"
+                        value="Totalmente atendida">
+                    <label for="idSim">Totalmente atendida</label><br>
+                </div>
+
+                <div>
+                    <h3>Qual nota você daria para o atendimento?</h3>
+
+                    <input
+                        id="idPes"
+                        type="radio"
+                        name="nmNota"
+                        value="Péssimo">
+                    <label for="idPes">Péssimo</label>
+
+                    <input
+                        id="idRuim"
+                        type="radio"
+                        name="nmNota"
+                        value="Ruim">
+                    <label for="idRuim">Ruim</label>
+
+                    <input
+                        id="idAceit"
+                        type="radio"
+                        name="nmNota"
+                        value="Aceitável">
+                    <label for="idAceit">Aceitável</label>
+
+                    <input
+                        id="idBom"
+                        type="radio"
+                        name="nmNota"
+                        value="Bom">
+                    <label for="idBom">Bom</label>
+
+                    <input
+                        id="idExce"
+                        type="radio"
+                        name="nmNota"
+                        value="Excelente">
+                    <label for="idExce">Excelente</label><br>                    
+                </div>
+
+                <div>
+                    <h3>Como você classificaria o comportamento do atendente?</h3>
+
+                    <input
+                        id="idIndel"
+                        type="radio"
+                        name="nmComport"
+                        value="Indelicado">
+                    <label for="idIndel">Indelicado</label>
+
+                    <input
+                        id="idMalHumo"
+                        type="radio"
+                        name="nmComport"
+                        value="Mal-Humorado">
+                    <label for="idMalHumo">Mal-Humorado</label>
+
+                    <input
+                        id="idNeutro" 
+                        type="radio"
+                        name="nmComport"
+                        value="Neutro">
+                    <label for="idNeutro">Neutro</label>
+
+                    <input
+                        id="idEduc"
+                        type="radio"
+                        name="nmComport"
+                        value="Educado">
+                    <label for="idEduc">Educado</label>
+
+                    <input
+                        id="idMuitoAt"
+                        type="radio"
+                        name="nmComport"
+                        value="Muito Atencioso">
+                    <label for="idMuitoAt">Muito Atencioso</label><br>                    
+                </div>
+
+                <div>
+                    <h3>De 0 a 10, qual nota você daria para o produto?</h3>
+                    
+                    <label for="idNota">0
+                    <input
+                        id="idNota"
+                        type="range"
+                        min="0"
+                        max="10">
+                    10</label>
+                </div>
+
+                <div>
+                    <h3>Informe sua idade</h3>
+                    
+                    <label for="idIdade">
+                    <input
+                        id="idIdade"
+                        type="number"
+                        min="16"
+                        max="120">
+                    Anos</label>
+                </div>
+
+                <div>
+                    <h3>Informe seu gênero</h3>
+
+                    <input
+                        id="idMasc"
+                        type="radio"
+                        name="nmGenero"
+                        value="Masculino">
+                    <label for="idMasc">Masculino</label>
+
+                    <input
+                        id="idFem"
+                        type="radio"
+                        name="nmGenero"
+                        value="Feminino">
+                    <label for="idFem">Feminino</label>
+
+                    <input
+                        id="idLgbt"
+                        type="radio"
+                        name="nmGenero"
+                        value="LGBT">
+                    <label for="idLgbt">LGBT</label>
+                </div>
+
+                <div class="Enviar">
+                    <input
+                        type="button"
+                        value="Enviar"
+                        class="Enviar"
+                        onclick="coletarInformacoes()">
+                </div>
+
+            </fieldset></center>
+        </form>
+        <script>
+            var foiAtendida;
+            var notaAtendimento;
+            var comportamento;
+            var notaProduto;
+            var idade;
+            var genero;
+
+            function coletarInformacoes(){
+
+                foiAtendida = document.querySelector('input[name="nmAtendeu"]:checked').value;
+                notaAtendimento = document.querySelector('input[name="nmNota"]:checked').value;
+                comportamento = document.querySelector('input[name="nmComport"]:checked').value;
+                notaProduto = document.getElementById("idNota").value;
+                idade = document.getElementById("idIdade").value;
+                genero = document.querySelector('input[name="nmGenero"]:checked').value;
+
+                console.log("Solicitação foi atendida: "+ foiAtendida);
+                console.log("Nota do atendimento: "+ notaAtendimento);
+                console.log("Comportamento do atendente: "+ comportamento);
+                console.log("Nota do produto: "+ notaProduto);
+                console.log("Idade: "+ idade);
+                console.log("Gênero: "+ genero);
+            }
+        </script>     
+    </body>
+</html>

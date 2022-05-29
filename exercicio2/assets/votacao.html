@@ -1,0 +1,188 @@
+<!-- 2. Crie um tela de uma urna eletrônica. Esta tela deverá conter um campo para digitação do número eleitoral do candidato e um campo para apresentar o nome do candidato, a tela também deverá exibir a foto do candidato.
+Caso o eleitor não se recorde do número de seu candidato ele poderá selecionar o número do candidato de uma lista.
+A urna deverá contar com os botões "Confirmar", "Cancelar", "Branco".--> 
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página votação</title>
+        <style>
+            fieldset{
+                width: 50%;
+                height: 400px;
+                background-color: rgb(255, 255, 255);
+                border: solid;
+                border-radius: 20px;
+            }
+            .fieldSet1{
+                width: 46%;
+                height: 290px;
+                margin-top: 30px;
+                margin-left: 30px;
+                float: left;
+                border: solid;
+                border-radius: 5px;
+
+            }
+
+            .fieldSet2{
+                width: 35%;
+                height: 300px;
+                margin-top: 30px;
+                background-color: rgba(0, 0, 0, 0.87);
+                margin-top: 70px;
+                margin-left: 550px;
+            }
+            input{
+                padding: 3px;
+                margin-left: 50px;
+                margin-right: -15px;
+                width: 70%;
+                text-align: left;
+                font-size: 20px;
+                margin-bottom: 15px;
+                font-weight: bold;
+                color: white;
+                background-color: black;
+                border-radius: 20%;
+            }
+            .mensagem{
+                font-family: Arial, Helvetica, sans-serif;
+                border: ridge;
+                text-align: center;
+                width: 47.5%;
+                margin-top: -32px;
+                margin-left: 34px;
+            }
+
+            label{
+                font-family: Arial, Helvetica, sans-serif;
+                margin-left: 30px;
+                font-weight: bold;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <form action="" method="get">
+            <fieldset> 
+                <fieldset class="fieldSet1">
+                    <h2>Seu voto para</h2>
+                    <h1 style="text-align:center;">Prefeito</h1>
+
+                    <label for="idNumero">Número:</label>
+                    <input type="text" id="idNumero" style="background-color: white; border: 1; border-radius: 0; color: black; width: 30px; margin-left: 10px"><br><br>
+
+                    <label for="idNome"></label>
+                    <input type="text" id="idNumero" style="background-color: white; border: 1; border-radius: 0; color: black; width: 30px; margin-left: 10px"><br><br>
+                </fieldset>    
+                <fieldset class="fieldSet2" >
+                    <table>
+                        <tr>
+                            <td>
+                                <input
+                                    type="button"
+                                    value="1">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="button"
+                                    value="2">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="button"
+                                    value="3">
+                            </td>
+                        </tr>
+                        
+                        <br><br>
+
+                        <tr>
+                            <td>
+                                <input
+                                    type="button"
+                                    value="4">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="button"
+                                    value="5">
+                            </td>
+
+                            <td>
+                                <input
+                                    type="button"
+                                    value="6">
+                            </td>                          
+                        </tr>
+
+                        <tr>
+
+                            <td>
+                                <input
+                                    type="button"
+                                    value="7">
+                            </td>
+                            <td>
+                                <input
+                                    type="button"
+                                    value="8">
+                            </td>
+                            <td>
+                                <input
+                                    type="button"
+                                    value="9">
+                            </td>
+                            
+                        </tr>
+
+                            <td style="visibility: hidden;">
+                                <input
+                                    type="button"
+                                    value="8" >
+                            </td>
+
+                            <td>
+                                <input
+                                    type="button"
+                                    value="0">
+                            </td>
+                            
+                        </tr>
+
+
+                        <tr>
+
+                            <td >
+                                <input
+                                    type="button"
+                                    value="Branco"
+                                    style="background-color: white; color: black; font-size: 10px; height: 40px; text-align: center;">
+                            </td>
+                            <td>
+                                <input
+                                    type="reset"
+                                    value="Corrige"
+                                    style="background-color: red; color: black; font-size: 10px; height: 40px; text-align: center;">
+                            </td>
+                            <td>                            
+                                <input
+                                    type="submit"
+                                    value="CONFIRMA"
+                                    style="background-color: rgb(7, 240, 26); height: 50px; font-size: 10px; text-align: center; color: black;">                            
+                            </td>                   
+                        </tr>
+                    </table>
+                </fieldset>
+            <h3 class="mensagem">Vote com consciência!</h3>  
+        </fieldset>
+        </form>        
+    </body>
+</html>
